@@ -4,8 +4,17 @@ function ejercicio1(){
         type: "POST",        
         success: function(response) {
             $('#eje1').html(response);    
-        },
+        }
     });
 }
 
+function ejercicio2(){
+    $.ajax({
+        url: 'ejercicio2.php',
+        type: "POST",        
+        success: function(response) {
+            $('#eje2').html(response);    
+        }
+    });
+}
 

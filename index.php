@@ -56,7 +56,11 @@ and open the template in the editor.
                         
                         <!--        ************************** EJERCICIO 2 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje2" role="tabpanel" aria-labelledby="v-pills-eje2-tab">
-                            
+                            <h2>Conexión a la base de datos</h2>
+                            <button class="btn btn-success btn-lg btn-block" type="button" onclick="ejercicio2();return false;">
+                                Conectar con usuario adminpais
+                            </button>  
+                            <div id="eje2"></div>
                         </div>
                 </div>
             </div>
