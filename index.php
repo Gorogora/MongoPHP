@@ -62,6 +62,27 @@ and open the template in the editor.
                             </button>  
                             <div id="eje2"></div>
                         </div>
+                        
+                        <!--        ************************** EJERCICIO 3 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje3" role="tabpanel" aria-labelledby="v-pills-eje3-tab">
+                            <h2>Titulares</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                                <th>Número</th>
+                                                <th>Titular</th>
+                                        </tr>                                    
+                                    </thead>
+                                    <tbody id="tbody_ej3"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!--        ************************** EJERCICIO 4 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje4" role="tabpanel" aria-labelledby="v-pills-eje4-tab">
+                            
+                        </div>
                 </div>
             </div>
         </div>

@@ -18,3 +18,13 @@ function ejercicio2(){
     });
 }
 
+function ejercicio3(){
+    $.ajax({
+        url: 'ejercicio3.php',
+        type: "POST",        
+        success: function(response) {
+            $('#tbody_ej3').html(response);    
+        }
+    });
+}
+
