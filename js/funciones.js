@@ -58,3 +58,42 @@ function ejercicio6(){
         }
     });
 }
+
+function ejercicio6(titular){
+    $.ajax({
+        url: 'ejercicio6.php',
+        type: "POST",        
+        success: function(response) {
+            $('#result_ej6').html(response);    
+        }
+    });
+}
+
+function ejercicio7(id_noticia){
+    $.ajax({
+        url: 'ejercicio7.php',
+        type: "POST",  
+        data: {id_noticia: id_noticia},
+        success: function(response) {
+            $('#result_ej7').html(response);            
+        }
+    });
+}
+
+function ejercicio8(etiqueta_principal, titular, autor){
+    $.ajax({
+        url: 'ejercicio8.php',
+        type: "POST",  
+        data: {etiqueta_principal: etiqueta_principal, titular: titular, autor: autor},
+        success: function(response) {
+            if(response === "-1"){
+                response = "<center>No se ha podido insertar</centar>";
+                $('#result_ej8').html(response);
+            }
+            else{
+                $('#result_ej8').html(response); 
+            }
+                       
+        }
+    });
+}

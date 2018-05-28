@@ -95,12 +95,73 @@ and open the template in the editor.
                         
                         <!--        ************************** EJERCICIO 7 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje7" role="tabpanel" aria-labelledby="v-pills-eje7-tab">
-                            
+                            <?php
+                                // Conectar al servidor de MongoDB con usuario y contraseña a la base de
+                                // datos el pais
+                                $manager = new MongoDB\Driver\Manager("mongodb://adminpais:apais@127.0.0.1:27017/elpais");
+
+                                //componer y realizar la consulta
+                                $filtro = [ ];
+                                $campos = ["projection" => ['_id' => 1, 'titular' => 1]];
+                                $query = new MongoDB\Driver\Query($filtro, $campos);
+                                $rows = $manager->executeQuery("elpais.noticias", $query);
+                            ?>
+                            <label for="selectTitulares">Selecciona un titular para ver la noticia completa</label>
+                            <div class="input-group">                                
+                                <select class="custom-select" id="selectTitulares">
+                                    <option selected>Titulares...</option>
+                                    <?php
+                                    foreach ($rows as $row) {
+                                    ?>
+                                        <option value="<?php echo $row->_id; ?>">
+                                            <?php echo $row->titular; ?>
+                                        </option>
+                                    <?php
+                                    }
+                                    ?>                                    
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="ejercicio7($('#selectTitulares').val());return false;">
+                                            Buscar
+                                    </button>
+                                </div>
+                            </div> 
+                            <div class="card text-dark">  
+                                <div id="result_ej7"></div>
+                            </div>
                         </div>
                         
                         <!--        ************************** EJERCICIO 8 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje8" role="tabpanel" aria-labelledby="v-pills-eje8-tab">
-                            
+                            <h2>Insertar una noticia</h2>
+                            <div class="card bg-light text-dark">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group row">
+                                            <label for="inputEtiqueta" class="col-sm-2 col-form-label">Etiqueta principal</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control" id="inputEtiqueta">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputTitular" class="col-sm-2 col-form-label">Titular</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control" id="inputTitular">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputAutor" class="col-sm-2 col-form-label">Autor</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control" id="inputAutor">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-primary" onclick="ejercicio8($('#inputEtiqueta').val(), $('#inputTitular').val(), $('#inputAutor').val());return false;">Insertar</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card text-dark">  
+                                <div id="result_ej8"></div>
+                            </div>
                         </div>
                         
                         
