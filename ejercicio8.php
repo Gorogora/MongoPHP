@@ -1,6 +1,6 @@
 <?php
 
-     if($_REQUEST['etiqueta_principal'] && $_REQUEST['titular'] && $_REQUEST['autor']){
+    if($_REQUEST['etiqueta_principal'] && $_REQUEST['titular'] && $_REQUEST['autor']){
         //copiar los parámetros en variables
         $etiqueta = $_REQUEST['etiqueta_principal'];
         $titular = $_REQUEST['titular'];
@@ -32,27 +32,16 @@
                     $query = new MongoDB\Driver\Query($filtro, $campos);
                     $rows = $manager->executeQuery("elpais.noticias", $query);
 
-                    //componer el resultado de la consulta
-                }                
-
-                //componer resultado de la consulta
-                foreach ($rows as $row) {
-                    $resultado = '<div class="card-body">';
-                    $resultado = $resultado. '<h3 class="card-title">' .$row->titular. '</h5>';
-                    $resultado = $resultado. '<h6 class="card-subtitle mb-2 text-muted">' .$row->etiqueta_principal. '</h6>';
-                    $resultado = $resultado. '<footer class="blockquote-footer">by <cite title="Source Title">' .$row->autor. '</cite></footer>';
-                    $resultado = $resultado. '</div>';
-                }
+                    //componer resultado de la consulta
+                    foreach ($rows as $row) {
+                        $resultado = '<div class="card-body">';
+                        $resultado = $resultado. '<h3 class="card-title">' .$row->titular. '</h5>';
+                        $resultado = $resultado. '<h6 class="card-subtitle mb-2 text-muted">' .$row->etiqueta_principal. '</h6>';
+                        $resultado = $resultado. '<footer class="blockquote-footer">by <cite title="Source Title">' .$row->autor. '</cite></footer>';
+                        $resultado = $resultado. '</div>';
+                    }
+                }            
                 echo $resultado;
-                /*
-                <div class="card-body">
-                    <h3 class="card-title">Titular</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Etiqueta principal</h6>
-                    Noticia
-                    <footer class="blockquote-footer">by <cite title="Source Title">Autor</cite></footer>
-                </div>
-                <div class="card-footer">Etiquetas</div>
-                */
             } 
             catch (MongoDB\Driver\Exception\Exception $e) {
                 $resultado = "<p>";
@@ -64,7 +53,11 @@
             }
         }
          
-     }
+    }
+    else{
+        $resultado = "0";
+        echo $resultado;
+    }
     
 ?>
 

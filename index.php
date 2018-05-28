@@ -70,6 +70,10 @@ and open the template in the editor.
                                                 <th>Titular</th>
                                         </tr>                                    
                                     </thead>
+                                    <?php
+                                    include 'ejercicio3.php';
+                                    ejercicio3();
+                                    ?>
                                     <tbody id="tbody_ej3"></tbody>
                                 </table>
                             </div>
@@ -78,18 +82,30 @@ and open the template in the editor.
                         <!--        ************************** EJERCICIO 4 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje4" role="tabpanel" aria-labelledby="v-pills-eje4-tab">
                             <h2>Noticias</h2>
+                            <?php
+                                include 'ejercicio4.php';
+                                ejercicio4();
+                            ?>
                             <div id="result_ej4"></div>
                         </div>
                         
                         <!--        ************************** EJERCICIO 5 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje5" role="tabpanel" aria-labelledby="v-pills-eje5-tab">
                             <h2>Noticias de Ciencia</h2>
+                            <?php
+                                include 'ejercicio5.php';
+                                ejercicio5();
+                            ?>
                             <div id="result_ej5"></div>
                         </div>
                         
                         <!--        ************************** EJERCICIO 6 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje6" role="tabpanel" aria-labelledby="v-pills-eje6-tab">
                             <h2>Noticias de Manuel Ansede</h2>
+                            <?php
+                                include 'ejercicio6.php';
+                                ejercicio6();
+                            ?>
                             <div id="result_ej6"></div>
                         </div>
                         

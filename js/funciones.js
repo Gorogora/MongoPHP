@@ -85,15 +85,18 @@ function ejercicio8(etiqueta_principal, titular, autor){
         url: 'ejercicio8.php',
         type: "POST",  
         data: {etiqueta_principal: etiqueta_principal, titular: titular, autor: autor},
-        success: function(response) {
-            if(response === "-1"){
+        success: function(response) {             
+            if(response == -1){
                 response = "<center>No se ha podido insertar</centar>";
+                $('#result_ej8').html(response);
+            }
+            else if (response == 0) {
+                response = "<center>Faltan campos por completar</centar>";
                 $('#result_ej8').html(response);
             }
             else{
                 $('#result_ej8').html(response); 
-            }
-                       
+            }         
         }
     });
 }

@@ -25,14 +25,21 @@
                     $resultado = '<div class="card-body">';
                     $resultado = $resultado. '<h3 class="card-title">' .$row->titular. '</h5>';
                     $resultado = $resultado. '<h6 class="card-subtitle mb-2 text-muted">' .$row->etiqueta_principal. '</h6>';
-                    $resultado = $resultado. $row->noticia;
+                    if(isset($row->noticia)){
+                        $resultado = $resultado. $row->noticia;
+                    }
+                    else{
+                        $resultado = $resultado. "La noticia no tiene contenido";
+                    }                    
                     $resultado = $resultado. '<footer class="blockquote-footer">by <cite title="Source Title">' .$row->autor. '</cite></footer>';
                     $resultado = $resultado. '</div>';
-                    $resultado = $resultado. '<div class="card-footer">';
-                    foreach ($row->etiquetas as $etiqueta) {
-                        $resultado = $resultado. '#' .$etiqueta. ' ';  
+                    if(!empty($row->etiquetas)){
+                        $resultado = $resultado. '<div class="card-footer">';
+                        foreach ($row->etiquetas as $etiqueta) {
+                            $resultado = $resultado. '#' .$etiqueta. ' ';  
+                        }
+                        $resultado = $resultado. '</div>';
                     }
-                    $resultado = $resultado. '</div>';
                 }
                 echo $resultado;
             } 

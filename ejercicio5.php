@@ -1,4 +1,6 @@
 <?php
+function ejercicio5(){
+    $resultado = "";
     try{
         // Conectar al servidor de MongoDB con usuario y contraseña a la base de
         // datos el pais
@@ -24,7 +26,9 @@
             else{
                 $resultado = $resultado. '<p>No hay frases destacadas en esta noticia para mostrar</p>';
             } 
-        }        
+            $resultado = $resultado. '<div class="mt-4 pt-4"></div>';
+        } 
+        echo $resultado;
     } 
     catch (MongoDB\Driver\Exception\Exception $e) {
         $resultado = "<p>";
@@ -34,6 +38,6 @@
         $resultado = $resultado. "<p>";
         echo $resultado;
     }
-    
+}   
 ?>
 

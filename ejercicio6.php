@@ -1,4 +1,6 @@
 <?php
+function ejercicio6(){
+    $resultado = "";
     try{
         // Conectar al servidor de MongoDB con usuario y contraseña a la base de
         // datos el pais
@@ -18,10 +20,9 @@
             $resultado = $resultado. '<p><b>Noticia: </b>' .$row->noticia. '</p>';
             
             $resultado = $resultado. '<p><b>Noticias relacionadas:</b></p>';
-            if(empty($row->noticias_relacionadas)){               
+            if(!empty($row->noticias_relacionadas)){               
                 $resultado = $resultado. '<ul>';
-                foreach ($row->noticias_relacionadas as $noticia) {
-                    
+                foreach ($row->noticias_relacionadas as $noticia) {                    
                     $filtro2 = [ "_id" => $noticia];
                     $campos2 = ["projection" => ['titular' => 1]];
                     $query2 = new MongoDB\Driver\Query($filtro2, $campos2);
@@ -36,7 +37,8 @@
             else{
                 $resultado = $resultado. '<p>No hay noticias relacionadas con ' .$row->titular. '</p>';
             } 
-        }        
+        }
+        echo $resultado;
     } 
     catch (MongoDB\Driver\Exception\Exception $e) {
         $resultado = "<p>";
@@ -46,6 +48,6 @@
         $resultado = $resultado. "<p>";
         echo $resultado;
     }
-    
+}    
 ?>
 

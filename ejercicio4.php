@@ -1,4 +1,6 @@
 <?php
+function ejercicio4(){
+    $resultado = "";
     try{
         // Conectar al servidor de MongoDB con usuario y contraseña a la base de
         // datos el pais
@@ -14,7 +16,7 @@
         foreach ($rows as $row) {
             $resultado = $resultado. '<p><b>Titular: </b>' .$row->titular. '</p>';
             $resultado = $resultado. '<p><b>Frases destacadas:</b></p>';
-            if(empty($row->frases_destacadas)){
+            if(!empty($row->frases_destacadas)){
                 $resultado = $resultado. '<ul>';
                 foreach ($row->frases_destacadas as $frase) {
                     $resultado = $resultado. '<li>' .$frase. '</li>';
@@ -24,7 +26,9 @@
             else{
                 $resultado = $resultado. '<p>No hay frases destacadas en esta noticia para mostrar</p>';
             } 
-        }        
+            $resultado = $resultado. '<div class="mt-4 pt-4"></div>';
+        }
+        echo $resultado;        
     } 
     catch (MongoDB\Driver\Exception\Exception $e) {
         $resultado = "<p>";
@@ -34,6 +38,6 @@
         $resultado = $resultado. "<p>";
         echo $resultado;
     }
-    
+}   
 ?>
 

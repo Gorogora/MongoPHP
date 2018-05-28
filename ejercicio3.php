@@ -1,4 +1,5 @@
 <?php
+function ejercicio3(){
     $resultado = "";
     try{
         // Conectar al servidor de MongoDB con usuario y contraseña a la base de
@@ -35,6 +36,6 @@
         $resultado = $resultado. "<p>";
         echo $resultado;
     }
-    
+}   
 ?>
 
