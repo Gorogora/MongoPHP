@@ -18,6 +18,7 @@ function ejercicio2(){
     });
 }
 
+//función correspondiente al ejercicio 3
 function ejercicio3(){
     $.ajax({
         url: 'ejercicio3.php',
@@ -28,3 +29,32 @@ function ejercicio3(){
     });
 }
 
+function ejercicio4(){
+    $.ajax({
+        url: 'ejercicio4.php',
+        type: "POST",        
+        success: function(response) {
+            $('#result_ej4').html(response);    
+        }
+    });
+}
+
+function ejercicio5(){
+    $.ajax({
+        url: 'ejercicio5.php',
+        type: "POST",        
+        success: function(response) {
+            $('#result_ej5').html(response);    
+        }
+    });
+}
+
+function ejercicio6(){
+    $.ajax({
+        url: 'ejercicio6.php',
+        type: "POST",        
+        success: function(response) {
+            $('#result_ej6').html(response);    
+        }
+    });
+}

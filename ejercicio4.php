@@ -1,5 +1,4 @@
 <?php
-    $resultado = "";
     try{
         // Conectar al servidor de MongoDB con usuario y contraseña a la base de
         // datos el pais
@@ -7,25 +6,25 @@
         
         //componer y realizar la consulta
         $filtro = [ ];
-        $campos = ["projection" => ['_id' => 1, 'titular' => 1]];
+        $campos = ["projection" => ['titular' => 1, 'frases_destacadas' => 1]];
         $query = new MongoDB\Driver\Query($filtro, $campos);
         $rows = $manager->executeQuery("elpais.noticias", $query);
 
-        //mostrar los resultados (cuerpo de la tabla)
-        foreach ($rows as $id => $row) {
-            $resultado = $resultado. '<tr>';
-            $resultado = $resultado. '<td>'.($id + 1).'</td>';
-            $resultado = $resultado. '<td>'.$row->titular.'</td>';
-            $resultado = $resultado. '</tr>';
-        }
-        
-        if($resultado!=""){
-            echo $resultado;
-        }
-        
-        else{
-            echo "<center>No hay titulares para mostrar</center>";
-        }
+        //componer resultado de la consulta
+        foreach ($rows as $row) {
+            $resultado = $resultado. '<p><b>Titular: </b>' .$row->titular. '</p>';
+            $resultado = $resultado. '<p><b>Frases destacadas:</b></p>';
+            if(empty($row->frases_destacadas)){
+                $resultado = $resultado. '<ul>';
+                foreach ($row->frases_destacadas as $frase) {
+                    $resultado = $resultado. '<li>' .$frase. '</li>';
+                }
+                $resultado = $resultado. '</ul>';                
+            }
+            else{
+                $resultado = $resultado. '<p>No hay frases destacadas en esta noticia para mostrar</p>';
+            } 
+        }        
     } 
     catch (MongoDB\Driver\Exception\Exception $e) {
         $resultado = "<p>";

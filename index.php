@@ -37,10 +37,6 @@ and open the template in the editor.
                     <a class="nav-link" id="v-pills-eje6-tab" data-toggle="pill" href="#v-pills-eje6" role="tab" aria-controls="v-pills-eje6" aria-selected="false">Ejercicio 6</a>
                     <a class="nav-link" id="v-pills-eje7-tab" data-toggle="pill" href="#v-pills-eje7" role="tab" aria-controls="v-pills-eje7" aria-selected="false">Ejercicio 7</a>
                     <a class="nav-link" id="v-pills-eje8-tab" data-toggle="pill" href="#v-pills-eje8" role="tab" aria-controls="v-pills-eje8" aria-selected="false">Ejercicio 8</a>
-                    <a class="nav-link" id="v-pills-eje9-tab" data-toggle="pill" href="#v-pills-eje9" role="tab" aria-controls="v-pills-eje9" aria-selected="false">Ejercicio 9</a>
-                    <a class="nav-link" id="v-pills-eje10-tab" data-toggle="pill" href="#v-pills-eje10" role="tab" aria-controls="v-pills-eje10" aria-selected="false">Ejercicio 10</a>
-                    <a class="nav-link" id="v-pills-eje11-tab" data-toggle="pill" href="#v-pills-eje11" role="tab" aria-controls="v-pills-eje11" aria-selected="false">Ejercicio 11</a>
-                    <a class="nav-link" id="v-pills-eje12-tab" data-toggle="pill" href="#v-pills-eje12" role="tab" aria-controls="v-pills-eje12" aria-selected="false">Ejercicio 12</a>
                     </div>
                 </div>
                 <div class="col-md-10">
@@ -81,8 +77,35 @@ and open the template in the editor.
                         
                         <!--        ************************** EJERCICIO 4 **************************  -->
                         <div class="tab-pane fade" id="v-pills-eje4" role="tabpanel" aria-labelledby="v-pills-eje4-tab">
+                            <h2>Noticias</h2>
+                            <div id="result_ej4"></div>
+                        </div>
+                        
+                        <!--        ************************** EJERCICIO 5 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje5" role="tabpanel" aria-labelledby="v-pills-eje5-tab">
+                            <h2>Noticias de Ciencia</h2>
+                            <div id="result_ej5"></div>
+                        </div>
+                        
+                        <!--        ************************** EJERCICIO 6 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje6" role="tabpanel" aria-labelledby="v-pills-eje6-tab">
+                            <h2>Noticias de Manuel Ansede</h2>
+                            <div id="result_ej6"></div>
+                        </div>
+                        
+                        <!--        ************************** EJERCICIO 7 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje7" role="tabpanel" aria-labelledby="v-pills-eje7-tab">
                             
                         </div>
+                        
+                        <!--        ************************** EJERCICIO 8 **************************  -->
+                        <div class="tab-pane fade" id="v-pills-eje8" role="tabpanel" aria-labelledby="v-pills-eje8-tab">
+                            
+                        </div>
+                        
+                        
+                        
+                        
                 </div>
             </div>
         </div>
